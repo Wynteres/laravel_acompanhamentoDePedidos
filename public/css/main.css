@@ -1,0 +1,87 @@
+html {
+	background-color: #b5c3d9;
+}
+body {
+	margin: 0px !important;
+}
+.btn-danger:hover{
+    background-color: #A93226 !important;
+}
+#mySidenav{
+    box-shadow: 10px 1px 1px 1px rgba(0, 0, 0, 0.04);	
+    padding-top: 85px;
+}
+#list-table_filter{
+	float: right;
+}
+#list-table_filter label{
+    display: inline-flex;
+}
+#list-table_filter input{
+	margin-left: 10px;
+}
+#list-table_length select{
+	margin-left: 10px;
+}
+#list-table_length label{
+	display: inline-flex;
+}
+.navbar-laravel{
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.04);
+}
+.page {
+	background-color: white;
+	border-radius: 5px;
+	margin-top: 100px;
+	padding: 20px
+}
+.logo-image{
+	max-height: 50px;
+}
+.custom-buttons a{
+	font-size: 20px;
+    padding: 0px 5px;
+
+}
+.link-det{
+	color: #1ece6c;
+}
+.link-det:hover{
+	color: #1aaf5d;
+}
+
+.link-archive{
+	color: #ea4b35;
+}
+.link-archive:hover{
+	color: #c33825;
+}
+.page-header span{
+	font-size: 20px !important;
+}
+/*General CSS copy*/
+.box{
+	display: none;
+	background-color: #FFFFFF;
+	width: 600px;
+	height: 200px;
+	z-index: 99999;
+	position: absolute;
+	left: 50%;
+	top: 100px;
+	margin-left: -300px;
+	border-radius: 10px 10px 10px 10px;
+	border: 1px solid #d3e0e9;
+	box-shadow: 0px 1px 3px 3px #C1CDCD;
+}
+.clickable{
+	cursor:pointer;	
+	-webkit-transition: 0.3s ease-in; /* Safari */
+    transition: 0.3s ease-in;
+}
+.clickable:hover{
+	background-color: #D3D3D3;
+}
+.center-text{
+	text-align: center;
+}

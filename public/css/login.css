@@ -1,0 +1,27 @@
+html {
+	background-image: url('/images/background-login.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100%;
+}
+
+.card-wrapper {
+	margin-top: 20%
+}
+
+.logo-cliente{
+	max-height: 125px;
+  	margin-top: -32px;
+    margin-right: -24px;
+}
+
+.custom-card{
+    border-radius: 5.25rem !important;
+    background-color: white !important;
+}
+
+.login-button{
+  	font-weight: 700;
+    font-size: 20px;
+}
