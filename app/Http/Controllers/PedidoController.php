@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
 
 use App\Models\Pedido;
 use App\Models\Empresa;
 use App\Models\Status;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -21,6 +24,14 @@ class PedidoController extends Controller
         $pedidos = Pedido::all();
 
         return view('pedido/pedido_management')->with('pedidos', $pedidos);
+    }
+
+    public function archive()
+    {
+
+        $pedidos = Pedido::onlyTrashed()->get();
+
+        return view('pedido/pedido_archive')->with('pedidos', $pedidos);
     }
 
     /**
@@ -97,8 +108,21 @@ class PedidoController extends Controller
      * @param  \App\Models\Pedido  $pedido
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pedido $pedido)
+    public function destroy(Request $request)
     {
-        //
+        Pedido::find($request->id)->delete();
+                
+        $pedidos = Pedido::all();
+
+        return redirect()->route('pedidos');
+    }
+
+    public function restore(Request $request)
+    {
+        Pedido::find($request->id)->restore();
+                
+        $pedidos = Pedido::all();
+
+        return redirect()->route('pedidos');
     }
 }

@@ -12,9 +12,15 @@ class Pedido extends Model
     protected $table = 'pedidos';
     protected $dates = ['deleted_at'];
 	protected $fillable = ['pedido_id'];
+
 	public function itens()
 	{
-		return $this->hasMany('App\Models\Item', 'id');
+		return $this->hasMany('App\Models\Item', 'pedido_id', 'id');
+	}
+
+	public function entregas()
+	{
+		return $this->hasMany('App\Models\Entrega', 'pedido_id', 'id');
 	}
 
 	public function empresa()

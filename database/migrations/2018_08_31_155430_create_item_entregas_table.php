@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNFsTable extends Migration
+class CreateItemEntregasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,18 @@ class CreateNFsTable extends Migration
      */
     public function up()
     {
-        Schema::create('nfs', function (Blueprint $table) {
+        Schema::create('itens_entrega', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('numero');
-            $table->string('chave');
-            $table->string('caminho_xml');
-            $table->date('data_emissao');
+            $table->double('quantidade');
+            $table->integer('item_id')->unsigned();
             $table->integer('entrega_id')->unsigned();
 
             $table->softDeletes();
             $table->timestamps();
             
+            $table->foreign('item_id')->references('id')->on('itens');
             $table->foreign('entrega_id')->references('id')->on('entregas');
         });
-        
     }
 
     /**
@@ -36,6 +34,6 @@ class CreateNFsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nfs');
+        Schema::dropIfExists('item_entregas');
     }
 }

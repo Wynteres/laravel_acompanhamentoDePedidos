@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\NF;
-use App\Models\Pedido;
+use App\ItemEntrega;
 use Illuminate\Http\Request;
 
-class NFController extends Controller
+class ItemEntregaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,33 +41,21 @@ class NFController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\NF  $nF
+     * @param  \App\ItemEntrega  $itemEntrega
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(ItemEntrega $itemEntrega)
     {
-        
-        if(isset($request->entrega))
-        {
-            $nfs = NF::where('entrega_id', '=', $request->entrega)->get();
-            $pedido = Pedido::where('id', '=', $request->pedido)->first();
-        }
-        else
-        {
-            $nfs = null;
-            $pedido = null;
-        }
-
-        return view('nf/nf')->with('pedido', $pedido)->with('nfs', $nfs);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\NF  $nF
+     * @param  \App\ItemEntrega  $itemEntrega
      * @return \Illuminate\Http\Response
      */
-    public function edit(NF $nF)
+    public function edit(ItemEntrega $itemEntrega)
     {
         //
     }
@@ -77,10 +64,10 @@ class NFController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\NF  $nF
+     * @param  \App\ItemEntrega  $itemEntrega
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, NF $nF)
+    public function update(Request $request, ItemEntrega $itemEntrega)
     {
         //
     }
@@ -88,10 +75,10 @@ class NFController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\NF  $nF
+     * @param  \App\ItemEntrega  $itemEntrega
      * @return \Illuminate\Http\Response
      */
-    public function destroy(NF $nF)
+    public function destroy(ItemEntrega $itemEntrega)
     {
         //
     }

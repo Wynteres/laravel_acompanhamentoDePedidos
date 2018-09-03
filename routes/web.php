@@ -24,10 +24,16 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::redirect('/dashboard', '/', 301);
 	// Route::get('/', 'DashboardController@index')->name('dashboard');	
+	Route::get('/help', 'DashboardController@help')->name('help');	
 
 	//rotas de pedido
 	Route::get('/', 'PedidoController@index')->name('pedidos');
-	Route::get('/arquivo', 'PedidoController@index')->name('pedidos-arquivados');
+	Route::get('/arquivo', 'PedidoController@archive')->name('pedidos-arquivados');
 	Route::get('/pedido/{id}', 'PedidoController@show')->name('pedido');
+	Route::delete('/pedido/{id}', 'PedidoController@destroy')->name('pedido-delete');
+	Route::patch('/pedido/{id}', 'PedidoController@restore')->name('pedido-restore');
+
+	//rotas nota fiscal
+	Route::get('/notas-fiscais/{pedido}-{entrega}', 'NFController@show')->name('notas-fiscais');
 
 });

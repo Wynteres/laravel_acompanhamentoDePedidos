@@ -5,7 +5,7 @@
 		<div class="panel panel-default">
 	        <div class="panel-heading">
 				<div class="row mb-4">
-                	<div class="col-4 offset-4 text-center title">Pedidos de compra</div>
+                	<div class="col-4 offset-4 text-center title">Pedidos arquivados</div>
             	</div>
         		<hr class="hr-section">
 	        </div>
@@ -41,10 +41,10 @@
 			                <td class="custom-buttons text-center">
 			                	<a href="{{ route('pedido', ['id' => $pedido->id]) }}" class="link-det mr-1" role="button"><i class="fas fa-list"></i></a>
 
-			                	<form action="{{ route('pedido-delete', ['pedido' => $pedido->id]) }}" method="post">
-								    {!! method_field('delete') !!}
+			                	<form action="{{ route('pedido-restore', ['pedido' => $pedido->id]) }}" method="post">
+								    {!! method_field('patch') !!}
     								{!! csrf_field() !!}
-								    <button  class="link-archive" type="submit"><i class="fas fa-box"></i></button>
+								    <button  class="link-det" type="submit"><i class="fas fa-box-open"></i></button>
 								</form>
 
 			                </td>

@@ -13,7 +13,13 @@ class Entrega extends Model
 
     public function nfs()
     {
-        return $this->hasMany('App\Models\NF', 'id');
+        return $this->hasMany('App\Models\NF', 'entrega_id', 'id');
+    }
+
+
+    public function itensEntrega()
+    {
+        return $this->hasMany('App\Models\ItemEntrega', 'entrega_id', 'id');
     }
 
 

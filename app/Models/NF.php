@@ -9,10 +9,10 @@ class NF extends Model
 {
 	use SoftDeletes;
 	
-    protected $table = 'entregas';
+    protected $table = 'nfs';
     protected $dates = ['deleted_at'];
 
-    public function pedido()
+    public function entrega()
     {
         return $this->belongsTo('App\Models\Entrega')->withDefault();
     }

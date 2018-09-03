@@ -28,4 +28,9 @@ class DashboardController extends Controller
     {
         return view('dashboard/dashboard_management');
     }
+
+    public function help()
+    {
+        return view('dashboard/help_page');
+    }
 }

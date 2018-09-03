@@ -14,7 +14,7 @@ class Item extends Model
 
     public function prazoEntrega()
     {
-        return $this->hasOne('App\Models\PrazoEntrega', 'id');
+        return $this->hasOne('App\Models\PrazoEntrega', 'item_id', 'id');
     }
 
 
