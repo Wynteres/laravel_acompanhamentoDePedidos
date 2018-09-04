@@ -7,7 +7,7 @@
         <div class="card custom-card card-signin my-5">
           <div class="card-body">
             <div class="mt-2 text-right">
-                <img src="{{ asset('images/logo-kroton.png') }}" class="img-fluid logo-cliente"> <br>
+                <img src="{{ asset('images/logo_kroton-login.png') }}" class="img-fluid logo-cliente"> <br>
             </div>
 
             <hr class="my-4">            

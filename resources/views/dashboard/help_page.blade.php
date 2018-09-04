@@ -21,7 +21,7 @@
         		</ul>
         	</div>
             <div class="row mt-4 text-center">
-                <div id="pedidos" class="col-12"><h3>Pedidos</h3></div>
+                <div id="pedidos" class="col-12"><h3>1. Pedidos</h3></div>
                 <div class="col-8 text-justify">
                     <span>
                         Nessa tela é possivel acompanhar os <strong>pedidos realizados</strong>, sendo possivel acessar a lista de <strong>itens</strong> deste pedido clicando no icone <i style="color: #8BC34A" class="fas fa-list"></i>, ou <strong>arquivar</strong> o pedido caso não seja mais necessário que ele apareça <strong>nesta</strong> listagem principal através do botao  <i class="fas fa-box" style="color: red"></i>. 
@@ -35,7 +35,7 @@
                 </div>
 
 
-                <div id="arquivo" class="col-12 mt-5"><h3>Pedidos Arquivados</h3></div>
+                <div id="arquivo" class="col-12 mt-5"><h3>2. Pedidos Arquivados</h3></div>
                 <div class="col-8 offset-4 text-justify">
                     <span>
                         É possivel acessar esta tela através do menu lateral <strong>"pedidos" -> "Pedidos arquivados"</strong>. Diferente da página inicial pode-se ser consultados os pedidos realizados <strong> já arquivados</strong>, sendo possivel acessar a lista de <strong>itens</strong> deste pedido clicando no icone <i style="color: #8BC34A" class="fas fa-list"></i>, ou <strong>desarquivar</strong> o pedido caso não seja mais necessário que ele apareça <strong>nesta</strong> listagem principal através do botao  <i class="fas fa-box" style="color: red"></i>. 
@@ -49,7 +49,7 @@
                 </div>
 
 
-                <div id="itens" class="col-12 mt-5"><h3>Itens comprados</h3></div>
+                <div id="itens" class="col-12 mt-5"><h3>3. Itens comprados</h3></div>
                 <div class="col-8 text-justify">
                     <span>
                         Nesta tela podemos ver com mais detalhes o pedido de compra, sendo possivel conferir o <strong> número de pedido</strong> no <strong>topo</strong> da página, ao lado <strong>esquerdo</strong> há um botão para <strong> voltar para tela anterior</strong> com todos pedidos de compras ativos. Em seguida podemos ver a data de emissão do pedido pela <strong>mogiglass</strong>, o número do pedido da <strong>mogiglass</strong> e o <strong>status</strong> atual do pedido, podendo este ser <strong>"em processamento"</strong>, <strong>"aguardando produtos</strong> ou <strong> "enviado"</strong>.<br>
@@ -60,10 +60,17 @@
                 </div>
 
 
-                <div id="entregas" class="col-12 mt-5"><h3>Itens comprados</h3></div>
+                <div id="entregas" class="col-12 mt-5"><h3>4. Entregas</h3></div>
                 <div class="col-8 offset-4 text-justify">
                     <span>
-                        Podemos selecionar a visualização dos itens por completo na aba <strong>"itens"</strong> (já padrão), e os itens entregues(ou enviados para entrega) na aba <strong>"Entregas"</strong>. Sendo possivel pela aba <strong>entregas</strong> visualizar as notas fiscais das entregas (com todos itens desta entrega) e os códigos de rastreio de cada entrega.
+                        Podemos selecionar a visualização dos itens por completo na aba <strong>"itens"</strong> dentro do detalhe do <strong><a href="#pedidos">pedido</a></strong>, e os itens entregues(ou enviados para entrega) na aba <strong>"Entregas"</strong>. Sendo possivel pela aba <strong>entregas</strong> visualizar as notas fiscais das entregas (com todos itens desta entrega) e os códigos de rastreio de cada entrega.
+                    </span>
+                </div>
+
+                <div id="notas-fiscais" class="col-12 mt-5"><h3>5. Notas Fiscais</h3></div>
+                <div class="col-8 text-justify">
+                    <span>
+                        Podemos ter acesso as notas fiscais dos pedidos através da tela de  <strong>entregas</strong> ou da tela de <strong>itens do pedido</strong>, através do ícone <i class="fas fa-file-invoice-dollar" style="color: #8BC34A"></i> localizano no final das linhas da tabela na tela de <strong>entregas</strong> ou no canto superior direito, abaixo do número do pedido da empresa vendedora, também com o mesmo ícone.
                     </span>
                 </div>
             </div>

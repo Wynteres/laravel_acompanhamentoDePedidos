@@ -119,7 +119,7 @@ class PedidoController extends Controller
 
     public function restore(Request $request)
     {
-        Pedido::find($request->id)->restore();
+        Pedido::onlyTrashed()->find($request->id)->restore();
                 
         $pedidos = Pedido::all();
 

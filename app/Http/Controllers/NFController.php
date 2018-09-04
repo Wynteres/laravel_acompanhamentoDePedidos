@@ -48,11 +48,16 @@ class NFController extends Controller
     public function show(Request $request)
     {
         
-        if(isset($request->entrega))
+        if(isset($request->entrega) && isset($request->pedido))
         {
             $nfs = NF::where('entrega_id', '=', $request->entrega)->get();
             $pedido = Pedido::where('id', '=', $request->pedido)->first();
         }
+        else if (isset($request->pedido))
+        {
+            $pedido = Pedido::where('id', '=', $request->pedido)->first();
+            return view('nf/nf_pedido')->with('pedido', $pedido);
+        } 
         else
         {
             $nfs = null;

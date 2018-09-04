@@ -39,6 +39,11 @@
 									Status: <strong>{{@$pedido->status['descricao'] }}</strong>
 								</span>
 							</div>
+							<div class="col-4 offset-4 text-right">
+								<span>
+									Ver notas fiscais:<a href="{{ route('notas-fiscais-pedido', ['pedido' => $pedido->id]) }}" class="link-det ml-1 mr-1" role="button"><i class="fas fa-file-invoice-dollar"></i></a>
+								</span>
+							</div>
 						</div>
 					</div>
 					<hr class="hr-section">					

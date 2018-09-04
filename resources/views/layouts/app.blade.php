@@ -100,7 +100,7 @@
                 <a class="dropdown-toggle" data-toggle="collapse" href="#collapseDial" role="button" aria-expanded="false" aria-controls="collapseDial">
                    <i class="fas fa-list"></i> Pedidos <span class="caret"></span>
                 </a>
-                <div class="sub-menu-item collapse" id="collapseDial">
+                <div class="sub-menu-item collapse show" id="collapseDial">
                     <a href="{{ route('pedidos') }}" role="button" aria-expanded="false">
                         - Pedidos ativos
                     </a>
@@ -110,6 +110,11 @@
                 </div>
 
                 <hr class="hr-menu">
+
+                <div class="logo-footer-wrapper">
+                    <img src="{{ asset('images/logo_kroton.png') }}" class="img-fluid image-footer">    
+                </div>
+                
             
                 <!-- <a href="#" role="button" aria-expanded="false">
                     Gerenciar Restrições
