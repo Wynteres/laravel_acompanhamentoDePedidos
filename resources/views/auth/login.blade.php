@@ -2,7 +2,7 @@
 
 @section('content')
     <link href="{{ asset('css/login.css') }}" rel="stylesheet">
-    <div class="row">
+    <div class="row h-100">
       <div class="col-sm-7  col-md-5 col-lg-4 mx-auto card-wrapper">
         <div class="card custom-card card-signin my-5">
           <div class="card-body">

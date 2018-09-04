@@ -5,9 +5,15 @@ html {
 	background-repeat: no-repeat;
 	height: 100%;
 }
+body{
+	height: 100%;
+}
 
+#app{
+	height: 100%;
+}
 .card-wrapper {
-	margin-top: 20%
+    align-self: center !important;
 }
 
 .logo-cliente{
