@@ -103,12 +103,12 @@
 
 								        <tfoot>
 								            <tr>
-								                <th>Status</th>
-								                <th>Número Comprador</th>
-								                <th>Número Vendedor</th>
-								                <th>Data de emissão</th>
+								                <th>Código comprador</th>
+								                <th>Código vendedor</th>
+								                <th>Número do item</th>
+								                <th>Descrição</th>
+								                <th>Quantidade</th>
 								                <th>Prazo de entrega</th>
-								                <th>Vendedor</th>
 								            </tr>
 								        </tfoot>
 								    </table>

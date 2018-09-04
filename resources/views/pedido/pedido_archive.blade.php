@@ -57,8 +57,8 @@
 		        <tfoot>
 		            <tr>
 		                <th>Status</th>
-		                <th>Número Comprador</th>
-		                <th>Número Vendedor</th>
+		                <th>Pedido do comprador</th>
+		                <th>Pedido do vendedor</th>
 		                <th>Data de emissão</th>
 		                <th>Prazo de entrega</th>
 		                <th>Vendedor</th>

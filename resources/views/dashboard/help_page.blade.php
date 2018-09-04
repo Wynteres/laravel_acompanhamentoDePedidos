@@ -39,12 +39,12 @@
             <div class="row mt-4 text-center">
                 <div id="pedidos" class="col-12"><h3>1. Pedidos</h3></div>
                 <div class="col-8 text-justify">
-                    <h5 id="1.1-funcionalidades">1.1 funcionalidades</h5>
+                    <h5 id="1.1-funcionalidades">1.1 Funcionalidades</h5>
                     <span>
                         Nessa tela é possivel acompanhar os <strong>pedidos realizados</strong>, sendo possivel acessar a lista de <strong>itens</strong> deste pedido clicando no icone <i style="color: #8BC34A" class="fas fa-list"></i>, ou <strong>arquivar</strong> o pedido caso não seja mais necessário que ele apareça <strong>nesta</strong> listagem principal através do botao  <i class="fas fa-box" style="color: red"></i>. 
                     </span>
                     <br>
-                    <h5 id="1.2-tabela" class="mt-2">1.2 tabela</h5>
+                    <h5 id="1.2-tabela" class="mt-2">1.2 Tabela</h5>
                     <span>
                         Ao clicar <strong>sobre</strong> o nome de uma <strong>coluna</strong> da tabela, os itens se organizarão. Também é possivel realizar <strong>pesquisas</strong> utilizando o campo localizado na <strong>direita superior</strong> da tabela de pedidos. Por fim, o campo selecionável no canto esquerdo superior da tabela serve para escolher a quantidade de <strong>linhas</strong> exibidas em cada página.
                     </span>
