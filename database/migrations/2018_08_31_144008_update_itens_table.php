@@ -13,7 +13,7 @@ class UpdateItensTable extends Migration
      */
     public function up()
     {    
-        Schema::table('itens', function (Blueprint $table) {            
+        Schema::table('itens', function (Blueprint $table) {
             $table->integer('pedido_id')->unsigned();
             $table->foreign('pedido_id')->references('id')->on('pedidos');
         });

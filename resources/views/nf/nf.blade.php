@@ -70,7 +70,7 @@
 									<span>
 										Chave de acesso:
 										<strong>
-											<a id="chave-acesso" href="http://www.nfe.fazenda.gov.br/portal/consultaRecaptcha.aspx?tipoConsulta=completa&tipoConteudo=XbSeqxE8pl8=" target="_BLANK" onclick="copyToClipboard()">
+											<a id="chave-acesso" href="http://www.nfe.fazenda.gov.br/portal/consultaRecaptcha.aspx?tipoConsulta=completa&tipoConteudo=XbSeqxE8pl8=&nfe={{ $nf['chave'] }}" target="_BLANK">
 												{{ $nf['chave'] }}
 											</a>
 										</strong>
@@ -80,7 +80,7 @@
 								<div class="col-6 mt-3">
 									<span>
 										Download do arquivo:
-										<a target="_BLANK" href="#">
+										<a target="_BLANK" download href="{{ Storage::url($nf['caminho_xml']) }}">
 											<i class="fas fa-file-download"> Download</i>
 										</a>
 									</span>

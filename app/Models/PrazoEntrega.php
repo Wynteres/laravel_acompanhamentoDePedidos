@@ -10,7 +10,7 @@ class PrazoEntrega extends Model
 	use SoftDeletes;
 
     protected $table = 'prazo_entregas';
-    protected $dates = ['deleted_at'];
+    protected $dates = ['deleted_at', 'data'];
 
 	public function item()
 	{

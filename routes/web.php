@@ -33,9 +33,11 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::delete('/pedido/{id}', 'PedidoController@destroy')->name('pedido-delete');
 	Route::patch('/pedido/{id}', 'PedidoController@restore')->name('pedido-restore');
 
-	
 	//rotas nota fiscal
 	Route::get('/notas-fiscais/{pedido}-{entrega}', 'NFController@show')->name('notas-fiscais');
 	Route::get('/notas-fiscais/{pedido}', 'NFController@show')->name('notas-fiscais-pedido');
 
 });
+
+Route::post('/pedido/create', 'PedidoController@create')->name('pedido-create');
+Route::post('/notafiscal/create', 'NFController@create')->name('nota-fiscal-create');

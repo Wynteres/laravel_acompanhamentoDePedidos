@@ -15,7 +15,7 @@ class CreateItemsTable extends Migration
     {
         Schema::create('itens', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codigo_comprador');
+            $table->string('codigo_comprador')->nullable();
             $table->integer('codigo_vendedor');
             $table->integer('numero_item');
             $table->string('descricao');
@@ -25,7 +25,11 @@ class CreateItemsTable extends Migration
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('prazo_entrega_id')->references('id')->on('prazo_entregas')->onDelete('cascade');
+            $table->foreign('prazo_entrega_id')->references('id')->on('prazo_entregas');
+        });
+
+        Schema::table('prazo_entregas', function (Blueprint $table) {
+               $table->foreign('item_id')->references('id')->on('itens');
         });
     }
 

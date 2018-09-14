@@ -20,7 +20,7 @@ class CreatePrazoEntregasTable extends Migration
 
             $table->softDeletes();
             $table->timestamps();
-            
+                        
         });
     }
 

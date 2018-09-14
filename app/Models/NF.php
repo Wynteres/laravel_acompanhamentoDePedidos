@@ -12,6 +12,16 @@ class NF extends Model
     protected $table = 'nfs';
     protected $dates = ['deleted_at'];
 
+
+	public static function notExists($nf){
+		$nfExistente = NF::where('numero', '=', $nf['numero'])->withTrashed()->first();
+		if($nfExistente === null){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
     public function entrega()
     {
         return $this->belongsTo('App\Models\Entrega')->withDefault();

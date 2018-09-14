@@ -24,7 +24,13 @@
 						<div class="row">
 							<div class="col-4">
 								<span>
-									Emissão do pedido: <strong>{{@$pedido['data_emissao'] }}</strong>
+									Emissão do pedido: 
+									<strong>
+					                	<?php 
+					                		$date = strtotime($pedido['data_emissao']);
+					                		echo date("d/m/Y", $date);
+					                	 ?>
+									</strong>
 								</span>
 							</div>
 							<div class="col-4 offset-4 text-right">
@@ -40,9 +46,13 @@
 								</span>
 							</div>
 							<div class="col-4 offset-4 text-right">
+
+								@if(@$pedido->entregas->count() > 0)
 								<span>
 									Ver notas fiscais:<a href="{{ route('notas-fiscais-pedido', ['pedido' => $pedido->id]) }}" class="link-det ml-1 mr-1" role="button"><i class="fas fa-file-invoice-dollar"></i></a>
 								</span>
+								@endif
+
 							</div>
 						</div>
 					</div>
@@ -141,6 +151,7 @@
 								        	<?php $loteEntrega = 0; ?>
 								        	@foreach($pedido->entregas as $entrega)
 								        		<?php $loteEntrega++; ?>
+
 								        		@foreach($entrega->itensEntrega as $itemEntrega)
 								        			
 										            <tr>
@@ -158,7 +169,7 @@
 										                <td> {{@$loteEntrega}} </td>
 										                <td class="custom-buttons text-center">
 										                	<a href="{{ route('notas-fiscais', ['pedido' => $pedido->id, 'entrega' => $entrega->id]) }}" class="link-det mr-1" role="button"><i class="fas fa-file-invoice-dollar"></i></a>
-	                										<a href="#" class="link-delivery" role="button"><i class="fas fa-truck"></i></a>
+	                										<a disabled class="link-delivery" role="button"><i class="fas fa-truck"></i></a>
 										                	
 										                </td>
 										            </tr>

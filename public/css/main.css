@@ -123,7 +123,7 @@ a:hover{
 	color: #b71c1c;
 }
 .link-delivery{
-	color: #2c82c9;
+	color: #2c82c9 !important;
 }
 .link-delivery:hover{
 	color: #2969b0;

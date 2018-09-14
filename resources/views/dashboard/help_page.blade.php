@@ -109,7 +109,8 @@
                     <br>
                     <h5 class="mt-2" id="5.2-funcionalidades">5.2 Funcionalidades</h5>
                     <span>
-                        Temos acesso a informações da nota como seu <strong>Número</strong>, data de emissão, <strong>chave de acesso</strong> e download do arquivo. O campo <strong>chave de acesso</strong> é um link que leva para a consulta do site da secretaria da fazenda, ao <strong> clicar no link </strong> a chave de acesso será <strong>copiada automaticamente</strong> sendo necessário apenas colar e completar o captcha no site da secretaria da fazenda.
+                        Temos acesso a informações da nota como seu <strong>Número</strong>, data de emissão, <strong>chave de acesso</strong> e download do arquivo. O campo <strong>chave de acesso</strong> é um link que leva para a consulta do site da secretaria da fazenda, ao <strong> clicar no link </strong> a chave de acesso será <strong>copiada automaticamente</strong> para o site da secretaria da fazenda, sendo necessario preencher o captcha para acessar a nota fiscal.
+                        O <strong>download</strong> do XML da nota fiscal pode ser realizado clicando no botao "download".
                     </span>
                 </div>
             </div>

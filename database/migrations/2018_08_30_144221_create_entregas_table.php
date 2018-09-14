@@ -15,7 +15,8 @@ class CreateEntregasTable extends Migration
     {
         Schema::create('entregas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('rastreio');
+            $table->string('cnpj_comprador');
+            $table->string('cnpj_vendedor');
             $table->integer('pedido_id')->unsigned();
 
 

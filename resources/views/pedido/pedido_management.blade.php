@@ -34,10 +34,18 @@
 			                	<?php 
 			                		$date = strtotime($pedido['data_emissao']);
 			                		echo date("d/m/Y", $date);
-			                	 ?>			                	 	
+			                	 ?>
+		                	</td>
+
+			                <td>
+			                	<?php 
+			                		$date = strtotime($pedido->prazoEntrega()['data']);
+			                		echo date("d/m/Y", $date);
+			                	 ?>
 		                	 </td>
-			                <td>Prazo de entrega</td>
+
 			                <td>{{ $pedido->empresa['nome'] }}</td>
+			                
 			                <td class="custom-buttons text-center">
 			                	<a href="{{ route('pedido', ['id' => $pedido->id]) }}" class="link-det mr-1" role="button"><i class="fas fa-list"></i></a>
 
