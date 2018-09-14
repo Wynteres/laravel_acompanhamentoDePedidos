@@ -142,7 +142,7 @@
 								                <th>Número do item</th>
 								                <th>Descrição</th>
 								                <th>Quantidade <br> enviada</th>
-								                <th>Data de envio</th>
+								                <th>Previsão de envio</th>
 								                <th>Lote de envio</th>
 								                <th>Informações</th>
 								            </tr>
@@ -185,7 +185,7 @@
 								                <th>Número do item</th>
 								                <th>Descrição</th>
 								                <th>Quantidade <br> enviada</th>
-								                <th>Data de envio</th>
+								                <th>Previsão de envio</th>
 								                <th>Lote de envio</th>
 								                <th>Informações</th>
 								            </tr>
