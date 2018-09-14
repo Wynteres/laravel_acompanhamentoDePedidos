@@ -60,6 +60,7 @@ class PedidoController extends Controller
 
                 $prazoEntrega = new PrazoEntrega;
                 info($pedido['pedido_vendedor'] . " - " . $item['prazoRecebimento']);
+                
                 if($item['prazoRecebimento'] != "1753-01-01")
                 {
                     info($pedido['pedido_vendedor'] . " - " . $item['prazoRecebimento']);

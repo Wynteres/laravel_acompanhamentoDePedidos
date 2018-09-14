@@ -39,5 +39,5 @@ Route::group(['middleware' => 'auth'], function() {
 
 });
 
-Route::post('/pedido/create', 'PedidoController@create')->name('pedido-create');
-Route::post('/notafiscal/create', 'NFController@create')->name('nota-fiscal-create');
+Route::post('pedido/create', 'PedidoController@create')->name('pedido-create');
+Route::post('notafiscal/create', 'NFController@create')->name('nota-fiscal-create');
