@@ -52,10 +52,6 @@ class PedidoController extends Controller
         $dataEmissao = $request->dataEmissao;
         $pedido['data_emissao'] = date("Y-m-d", strtotime($dataEmissao));
 
-        info($request->dataEmissao);
-        info($dataEmissao);
-        info(date("Y-m-d", strtotime($dataEmissao)));
-
         if($pedido::notExists($pedido)){
             $pedido->save();
 
@@ -63,10 +59,11 @@ class PedidoController extends Controller
             {   
 
                 $prazoEntrega = new PrazoEntrega;
-
-                if(isset($item->prazoRecebimento))
+                info($pedido['pedido_vendedor'] . " - " . $item['prazoRecebimento']);
+                if($item['prazoRecebimento'] != "1753-01-01")
                 {
-                    $prazoEntrega['data'] = date("Y-m-d", strtotime($item->prazoRecebimento));
+                    info($pedido['pedido_vendedor'] . " - " . $item['prazoRecebimento']);
+                    $prazoEntrega['data'] = date("Y-m-d", strtotime($item['prazoRecebimento']));
                 }
                 else
                 {   
