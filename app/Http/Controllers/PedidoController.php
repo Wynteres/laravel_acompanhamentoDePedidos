@@ -45,7 +45,7 @@ class PedidoController extends Controller
     public function create(Request $request)
     {
         $pedido = new Pedido();
-        $pedido['empresa_id'] = 1;
+        $pedido['empresa_id'] = $request->empresa;
         $pedido['status_id'] = 1;
         $pedido['pedido_comprador'] = $request->numeroComprador;
         $pedido['pedido_vendedor'] = $request->numeroMogiglass;
@@ -182,6 +182,6 @@ class PedidoController extends Controller
                 
         $pedidos = Pedido::all();
 
-        return redirect()->route('pedidos');
+        return redirect()->route('pedidos-arquivados');
     }
 }

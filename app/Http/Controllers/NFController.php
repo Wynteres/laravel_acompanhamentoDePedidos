@@ -114,11 +114,11 @@ class NFController extends Controller
         if(isset($request->entrega) && isset($request->pedido))
         {
             $nfs = NF::where('entrega_id', '=', $request->entrega)->get();
-            $pedido = Pedido::where('id', '=', $request->pedido)->first();
+            $pedido = Pedido::where('id', '=', $request->pedido)->withTrashed()->first();
         }
         else if (isset($request->pedido))
         {
-            $pedido = Pedido::where('id', '=', $request->pedido)->first();
+            $pedido = Pedido::where('id', '=', $request->pedido)->withTrashed()->first();
             return view('nf/nf_pedido')->with('pedido', $pedido);
         } 
         else

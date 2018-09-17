@@ -105,10 +105,10 @@
 
                 <hr class="hr-menu">
                 
-                <a class="dropdown-toggle" data-toggle="collapse" href="#collapseDial" role="button" aria-expanded="false" aria-controls="collapseDial">
+                <a class="dropdown-toggle" data-toggle="collapse" href="#collapsePedido" role="button" aria-expanded="false" aria-controls="collapsePedido">
                    <i class="fas fa-list"></i> Pedidos <span class="caret"></span>
                 </a>
-                <div class="sub-menu-item collapse show" id="collapseDial">
+                <div class="sub-menu-item collapse show" id="collapsePedido">
                     <a href="{{ route('pedidos') }}" role="button" aria-expanded="false">
                         - Pedidos ativos
                     </a>
@@ -116,7 +116,18 @@
                         - Pedidos arquivados
                     </a>
                 </div>
+<!-- 
+                <hr class="hr-menu">
 
+                <a class="dropdown-toggle" data-toggle="collapse" href="#collapseRelatorio" role="button" aria-expanded="false" aria-controls="collapseRelatorio">
+                   <i class="fas fa-file-alt"></i> Relatórios <span class="caret"></span>
+                </a>
+                <div class="sub-menu-item collapse show" id="collapseRelatorio">
+                    <a href="{{ route('relatorio-itens-entregar') }}" role="button" aria-expanded="false">
+                        - Itens a entregar
+                    </a>
+                </div>
+ -->
                 <hr class="hr-menu">
 
                 <div class="logo-footer-wrapper">

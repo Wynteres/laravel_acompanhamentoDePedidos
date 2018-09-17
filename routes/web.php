@@ -37,6 +37,10 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/notas-fiscais/{pedido}-{entrega}', 'NFController@show')->name('notas-fiscais');
 	Route::get('/notas-fiscais/{pedido}', 'NFController@show')->name('notas-fiscais-pedido');
 
+	//rotas de relatórios
+	Route::get('/relatorio/itens-a-entregar', 'PedidoController@index')->name('relatorio-itens-entregar');
+
+
 });
 
 Route::post('pedido/create', 'PedidoController@create')->name('pedido-create');
