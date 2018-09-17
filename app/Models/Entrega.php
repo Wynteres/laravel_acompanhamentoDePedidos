@@ -16,6 +16,10 @@ class Entrega extends Model
         return $this->hasMany('App\Models\NF', 'entrega_id', 'id');
     }
 
+    public function dataEnvio()
+    {
+        return $this->hasMany('App\Models\NF', 'entrega_id', 'id')->orderByRaw('data_emissao DESC');
+    }
 
     public function itensEntrega()
     {

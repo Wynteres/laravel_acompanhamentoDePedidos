@@ -30,19 +30,14 @@
 			                <td>{{ $pedido->status['descricao'] }}</td>
 			                <td>{{ $pedido['pedido_comprador'] }}</td>
 			                <td>{{ $pedido['pedido_vendedor'] }}</td>
-			                <td>
-			                	<?php 
+			                <td><?php 
 			                		$date = strtotime($pedido['data_emissao']);
 			                		echo date("d/m/Y", $date);
-			                	 ?>
-		                	</td>
-
-			                <td>
-			                	<?php 
+			                	 ?></td>
+			                <td><?php 
 			                		$date = strtotime($pedido->prazoEntrega()['data']);
 			                		echo date("d/m/Y", $date);
-			                	 ?>
-		                	 </td>
+			                	 ?></td>
 
 			                <td>{{ $pedido->empresa['nome'] }}</td>
 			                

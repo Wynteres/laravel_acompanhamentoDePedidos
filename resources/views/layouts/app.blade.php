@@ -8,13 +8,21 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }} | Painel de acompanhamento integrado</title>
+    <title>{{ config('app.name', 'Laravel') }} | Painel de acompanhamento integrado - {{ Route::currentRouteName() }} @if(Route::currentRouteName() == 'pedido') {{ @$pedido['pedido_comprador'] }} @endif </title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" ></script>
 
-    <script src="{{ asset('js/jquery.dataTables.min.js') }}" defer></script>
-    <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}" defer></script>
+    <script src="{{ asset('js/datatables/jquery.dataTables.min.js') }}" defer></script>
+    <script src="{{ asset('js/datatables/dataTables.bootstrap4.min.js') }}" defer></script>
+    <script src="{{ asset('js/datatables/dataTables.buttons.min.js') }}" defer></script>
+    <script src="{{ asset('js/datatables/buttons.flash.min.js') }}" defer></script>
+    <script src="{{ asset('js/datatables/jszip.min.js') }}" defer></script>
+    <script src="{{ asset('js/datatables/pdfmake.min.js') }}" defer></script>
+    <script src="{{ asset('js/datatables/vfs_fonts.js') }}" defer></script>
+    <script src="{{ asset('js/datatables/buttons.html5.min.js') }}" defer></script>
+    <script src="{{ asset('js/datatables/buttons.print.min.js') }}" defer></script>
+    <script src="{{ asset('js/datatables/date-eu.js') }}" defer></script>
 
 
     <!-- Fonts -->

@@ -17,6 +17,7 @@
                         <ul>
                             <li><a href="#1.1-funcionalidades">1.1 Funcionalidades</a></li>
                             <li><a href="#1.2-tabela">1.2 Tabela</a></li>
+                            <li><a href="#1.3-exportar">1.2 Exportar</a></li>
                         </ul>
         			<li><a href="#arquivo">2. Pedidos arquivados</a></li>
                         <ul>
@@ -52,6 +53,11 @@
                     </span>
                     <br>
                     <span>Estas caracteristicas podem ser vistas em todas tabelas de informações.</span>
+                    <br>
+                    <h5 class="mt-2" id="1.3-exportar" ">1.3 Exportar</h5>
+                    <span>
+                        É possivel <strong>exportar</strong> as tabelas através dos botões na parte superiro esquerda de cada uma das tabelas, sendo <i style="color: green" class="fas fa-file-excel"></i> para Excel, <i style="color: red" class="fas fa-file-pdf"></i> para PDF e <i style="color: blue" class="fas fa-print"></i> para imprimir as informações da tabela exibida.
+                    </span>
                 </div>
 
 

@@ -9,7 +9,7 @@
 	        <div class="panel-heading">
 				<div class="row">
 					<div class="col-4 align-left">
-						<a href="{{ route('pedidos') }}" role="button" class="btn btn-voltar" aria-expanded="false">
+						<a href="@if($pedido->trashed()) {{ route('pedidos-arquivados') }} @else {{ route('pedidos') }} @endif" role="button" class="btn btn-voltar" aria-expanded="false">
 	                       <i class="fas fa-arrow-left"></i> Voltar
 	                    </a>
                 	</div>
@@ -78,7 +78,7 @@
 
 								<!-- Tabela de itens -->
 								<div class="col-12">							
-							  		<table id="list-table" class="table table-striped table-bordered" style="width:100%">
+							  		<table id="list-table-itens" class="table table-striped table-bordered" style="width:100%">
 								        <thead>
 								            <tr>
 								                <th>Código comprador</th>
@@ -142,7 +142,7 @@
 								                <th>Número do item</th>
 								                <th>Descrição</th>
 								                <th>Quantidade <br> enviada</th>
-								                <th>Previsão de envio</th>
+								                <th>Data de envio</th>
 								                <th>Lote de envio</th>
 								                <th>Informações</th>
 								            </tr>
@@ -162,7 +162,7 @@
 										                <td>{{ @$itemEntrega['quantidade'] }}</td>
 										                <td>
 										                	<?php 
-										                		$date = strtotime($itemEntrega->item->prazoEntrega['data']);
+										                		$date = strtotime($entrega->dataEnvio[0]['data_emissao']);
 										                		echo date("d/m/Y", $date);
 										                	 ?>
 									                	</td>
@@ -185,7 +185,7 @@
 								                <th>Número do item</th>
 								                <th>Descrição</th>
 								                <th>Quantidade <br> enviada</th>
-								                <th>Previsão de envio</th>
+								                <th>Data de envio</th>
 								                <th>Lote de envio</th>
 								                <th>Informações</th>
 								            </tr>

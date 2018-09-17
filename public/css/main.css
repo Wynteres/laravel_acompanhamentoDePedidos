@@ -56,6 +56,36 @@ a:hover{
     box-shadow: 10px 1px 1px 1px rgba(0, 0, 0, 0.04);	
     padding-top: 85px;
 }
+.pagination {
+	justify-content: center;
+}
+.dataTables_length {
+	display: inline;
+}
+.dataTables_length select {
+    margin-top: -10px;
+}
+input.form-control.form-control-sm {
+    margin-top: -6px;
+}
+.dt-buttons{
+	margin-left: 15px;
+    display: inline;
+}
+.dt-buttons button{
+    background: none;
+    border: none;
+    font-size: 25px;
+}
+.buttons-excel{
+	color: rgb(33,102,60);
+}
+.buttons-pdf{
+	color: rgb(213,1,12);
+}
+.buttons-print{
+	color: #0053a4;
+}
 #list-table_filter{
 	float: right;
 }
@@ -69,6 +99,21 @@ a:hover{
 	margin-left: 10px;
 }
 #list-table_length label{
+	display: inline-flex;
+}
+#list-table-itens_filter{
+	float: right;
+}
+#list-table-itens_filter label{
+    display: inline-flex;
+}
+#list-table-itens_filter input{
+	margin-left: 10px;
+}
+#list-table-itens_length select{
+	margin-left: 10px;
+}
+#list-table-itens_length label{
 	display: inline-flex;
 }
 #list-table-entrega_filter{
