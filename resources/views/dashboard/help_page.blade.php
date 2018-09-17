@@ -17,7 +17,9 @@
                         <ul>
                             <li><a href="#1.1-funcionalidades">1.1 Funcionalidades</a></li>
                             <li><a href="#1.2-tabela">1.2 Tabela</a></li>
-                            <li><a href="#1.3-exportar">1.2 Exportar</a></li>
+                            <li><a href="#1.3-exportar">1.3 Exportar</a></li>
+                            <li><a href="#1.4-status">1.4 Status do pedido</a></li>
+                            <li><a href="#1.5-prazo">1.5 Prazo de entrega</a></li>
                         </ul>
         			<li><a href="#arquivo">2. Pedidos arquivados</a></li>
                         <ul>
@@ -57,6 +59,19 @@
                     <h5 class="mt-2" id="1.3-exportar" ">1.3 Exportar</h5>
                     <span>
                         É possivel <strong>exportar</strong> as tabelas através dos botões na parte superiro esquerda de cada uma das tabelas, sendo <i style="color: green" class="fas fa-file-excel"></i> para Excel, <i style="color: red" class="fas fa-file-pdf"></i> para PDF e <i style="color: blue" class="fas fa-print"></i> para imprimir as informações da tabela exibida.
+                    </span>
+                    <br>
+                    <h5 class="mt-2" id="1.4-status" ">1.4 <strong>Status do pedido</strong></h5>
+                    <span>
+                        O sistema tem <strong>3 possiveis status de pedido:</strong><br>
+                        <strong>1 - Em processamento: </strong> O pedido está confirmado e em preparação para envio dos produtos em estoque. Caso não haja nenhum pedido em estoque, se manterá até alguma entrega ser realizada. <br>
+                        <strong>2 - Aguardando materiais: </strong> O pedido tem uma ou mais entregas parciais realizadas porém restam itens a serem entregues. <br>
+                        <strong>3 - Enviado: </strong> Todos itens do pedido já foram enviados.
+                    </span>
+                    <br>
+                    <h5 class="mt-2" id="1.5-prazo" ">1.5 Prazo de entrega</h5>
+                    <span>
+                        A listagem geral de pedidos informa  <strong>maior</strong> prazo de entrega entre todos itens confirmados. Sendo possivel confirmar os prazos individuais no detalhe de cada pedido, e posteriormente através de <strong>relatórios</strong> que estão sendo desenvolvidos.
                     </span>
                 </div>
 
