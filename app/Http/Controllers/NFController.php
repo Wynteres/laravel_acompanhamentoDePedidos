@@ -40,6 +40,7 @@ class NFController extends Controller
         $entrega['cnpj_comprador'] = $request['cnpjComprador'];
         $entrega['cnpj_vendedor'] = $request['cnpjVendedor'];
         $entrega['pedido_id'] = $pedido['id'];
+        
         $entrega->save();
 
         foreach ($request['nfs'] as $nfEntrega){
