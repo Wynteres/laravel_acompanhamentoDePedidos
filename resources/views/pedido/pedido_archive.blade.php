@@ -14,6 +14,7 @@
 		        <thead>
 		            <tr>
 		                <th>Status</th>
+		                <th>CNPJ da unidade</th>
 		                <th>Pedido do comprador</th>
 		                <th>Pedido do vendedor</th>
 		                <th>Data de emissão</th>
@@ -27,7 +28,8 @@
 		        	@foreach($pedidos as $pedido)
 
 			            <tr>
-			                <td>{{ $pedido->status['descricao'] }}</td>
+			                <td>{{ $pedido->status['descricao'] }}</td>			                
+			                <td>{{ $pedido->comprador['cnpj'] }}</td>
 			                <td>{{ $pedido['pedido_comprador'] }}</td>
 			                <td>{{ $pedido['pedido_vendedor'] }}</td>
 			                <td>
@@ -60,6 +62,7 @@
 		        <tfoot>
 		            <tr>
 		                <th>Status</th>
+		                <th>CNPJ da unidade</th>
 		                <th>Pedido do comprador</th>
 		                <th>Pedido do vendedor</th>
 		                <th>Data de emissão</th>
