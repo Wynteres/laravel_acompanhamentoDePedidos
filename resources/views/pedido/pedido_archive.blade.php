@@ -33,11 +33,10 @@
 			                <td>
 			                	<?php 
 			                		$date = strtotime($pedido['data_emissao']);
-			                		echo date("d/m/Y", $date);
 			                	 ?>			                	 	
 		                	 </td>
 			                <td><?php 
-			                		$date = strtotime($pedido->prazoEntrega()['data']);
+			                		$date = strtotime($pedido->prazoEntrega());
 			                		echo date("d/m/Y", $date);
 			                	 ?></td>
 			                	 

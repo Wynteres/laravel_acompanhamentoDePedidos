@@ -14,6 +14,7 @@
 		        <thead>
 		            <tr>
 		                <th>Status</th>
+		                <th>CNPJ da unidade</th>
 		                <th>Pedido do comprador</th>
 		                <th>Pedido do vendedor</th>
 		                <th>Data de emissão</th>
@@ -28,6 +29,7 @@
 
 			            <tr>
 			                <td>{{ $pedido->status['descricao'] }}</td>
+			                <td>{{ $pedido->comprador['cnpj'] }}</td>
 			                <td>{{ $pedido['pedido_comprador'] }}</td>
 			                <td>{{ $pedido['pedido_vendedor'] }}</td>
 			                <td><?php 
@@ -42,13 +44,14 @@
 			                <td>{{ $pedido->empresa['nome'] }}</td>
 			                
 			                <td class="custom-buttons text-center">
-			                	<a href="{{ route('pedido', ['id' => $pedido->id]) }}" class="link-det mr-1" role="button"><i class="fas fa-list"></i></a>
+				                	<a  href="{{ route('pedido', ['id' => $pedido->id]) }}" class="link-det" role="button"><i class="fas fa-list"></i></a>
 
-			                	<form action="{{ route('pedido-delete', ['pedido' => $pedido->id]) }}" method="post">
-								    {!! method_field('delete') !!}
-    								{!! csrf_field() !!}
-								    <button  class="link-archive" type="submit"><i class="fas fa-box"></i></button>
-								</form>
+				                	<form action="{{ route('pedido-delete', ['pedido' => $pedido->id]) }}" method="post">
+									    {!! method_field('delete') !!}
+	    								{!! csrf_field() !!}
+									    <button  class="link-archive" type="submit"><i class="fas fa-box"></i></button>
+									</form>
+								</div>
 
 			                </td>
 			            </tr>
@@ -60,6 +63,7 @@
 		        <tfoot>
 		            <tr>
 		                <th>Status</th>
+		                <th>CNPJ da unidade</th>
 		                <th>Pedido do comprador</th>
 		                <th>Pedido do vendedor</th>
 		                <th>Data de emissão</th>

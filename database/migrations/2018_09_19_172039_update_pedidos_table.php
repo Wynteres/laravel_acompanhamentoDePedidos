@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateEmpresaTable extends Migration
+class UpdatePedidosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class UpdateEmpresaTable extends Migration
      */
     public function up()
     {
-        
-        Schema::table('empresas', function (Blueprint $table) {
-            $table->string('cnpj')->nullable();
+        Schema::table('pedidos', function (Blueprint $table) {
+            $table->integer('comprador_id')->unsigned()->nullable();
+
+            $table->foreign('comprador_id')->references('id')->on('empresas');
+            
         });
     }
 

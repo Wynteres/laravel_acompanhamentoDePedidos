@@ -116,7 +116,7 @@
                         - Pedidos arquivados
                     </a>
                 </div>
-<!-- 
+                
                 <hr class="hr-menu">
 
                 <a class="dropdown-toggle" data-toggle="collapse" href="#collapseRelatorio" role="button" aria-expanded="false" aria-controls="collapseRelatorio">
@@ -127,7 +127,7 @@
                         - Itens a entregar
                     </a>
                 </div>
- -->
+
                 <hr class="hr-menu">
 
                 <div class="logo-footer-wrapper">

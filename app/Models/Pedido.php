@@ -15,13 +15,20 @@ class Pedido extends Model
 
 	public static function notExists($pedido){
 
-		$pedidoExistente = Pedido::where('pedido_vendedor', '=', $pedido['pedido_vendedor'])->whereYear('data_emissao', '=', $pedido['data_emissao'])->withTrashed()->first();
+		$pedidoExistente = Pedido::where('pedido_vendedor', '=', $pedido['pedido_vendedor'])->where('comprador_id', '=', $pedido['comprador_id'])->whereYear('data_emissao', '=', $pedido['data_emissao'])->withTrashed()->first();
 
 		if($pedidoExistente === null){
 			return true;
 		} else {
 			return false;
 		}
+	}
+
+
+	public static function getExistingPedido($pedido){
+
+		return Pedido::where('pedido_vendedor', '=', $pedido['pedido_vendedor'])->where('comprador_id', '=', $pedido['comprador_id'])->whereYear('data_emissao', '=', $pedido['data_emissao'])->withTrashed()->first();
+		
 	}
 
 	public function entregue(){
@@ -42,6 +49,31 @@ class Pedido extends Model
 		}
 
 		return $entregue;
+	}
+
+	public function itensPendentes(){
+		$itensPendentes = array();
+
+
+		$itens = Item::where('pedido_id', '=', $this['id'])->get();
+
+		foreach ($itens as $item) 
+		{
+			$itensEntrega = ItemEntrega::where('item_id', '=', $item['id'])->get();
+			$somaEntrega = 0;
+
+			foreach ($itensEntrega as $itemEntrega) 
+			{
+				$somaEntrega + $itemEntrega['quantidade'];
+			}
+
+			if($item['quantidade'] > $somaEntrega){
+				$item['quantidade'] = $item['quantidade'] - $somaEntrega;
+				array_push($itensPendentes, $item);
+			}
+		}
+
+		return $itensPendentes;
 	}
 
 	public function prazoEntrega()
@@ -68,6 +100,11 @@ class Pedido extends Model
 	public function empresa()
 	{
 		return $this->hasOne('App\Models\Empresa', 'id', 'empresa_id');
+	}
+
+	public function comprador()
+	{
+		return $this->hasOne('App\Models\Empresa', 'id', 'comprador_id');
 	}
 
 	public function status()

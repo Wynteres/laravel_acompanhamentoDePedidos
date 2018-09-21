@@ -143,6 +143,9 @@ input.form-control.form-control-sm {
 .logo-image{
 	max-height: 65px;
 }
+.custom-buttons{
+    min-width: 90px;
+}
 .custom-buttons a{
 	font-size: 20px;
     padding: 0px 5px;

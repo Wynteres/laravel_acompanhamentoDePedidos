@@ -18,4 +18,18 @@ class Empresa extends Model
     {
         return $this->belongsTo('App\Models\Pedido')->withDefault();
     }
+
+
+    public static function notExists($cnpj)
+    {	
+    	if(Empresa::where('cnpj', '=', $cnpj)->count() > 0) {
+    		return false;
+    	}
+    	else
+    	{
+    		return true;
+    	}
+    }
 }
+
+

@@ -101,7 +101,7 @@
 								                <td>{{ @$item['quantidade'] }}</td>
 								                <td>
 								                	<?php 
-								                		$date = strtotime($item->prazoEntrega['data']);
+								                		$date = strtotime($item->prazoEntrega()['data']);
 								                		echo date("d/m/Y", $date);
 								                	 ?>								                	 	
 							                	 </td>

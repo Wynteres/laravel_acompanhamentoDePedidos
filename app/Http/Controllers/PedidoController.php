@@ -24,7 +24,7 @@ class PedidoController extends Controller
     public function index()
     {
 
-        $pedidos = Pedido::all();
+        $pedidos = Pedido::where('status_id', '!=', '3')->get();
 
         return view('pedido/pedido_management')->with('pedidos', $pedidos);
     }
@@ -44,6 +44,7 @@ class PedidoController extends Controller
      */
     public function create(Request $request)
     {
+
         $pedido = new Pedido();
         $pedido['empresa_id'] = $request->empresa;
         $pedido['status_id'] = 1;
@@ -52,11 +53,25 @@ class PedidoController extends Controller
         $dataEmissao = $request->dataEmissao;
         $pedido['data_emissao'] = date("Y-m-d", strtotime($dataEmissao));
 
+        if(Empresa::notExists($request->comprador['cnpj']))
+        {
+            $comprador = new Empresa;
+            $comprador['nome'] = $request->comprador['nome'];
+            $comprador['cnpj'] = $request->comprador['cnpj'];
+            $comprador->save();
+            $pedido['comprador_id'] = $comprador['id'];
+        } 
+        else
+        {
+            $comprador = Empresa::where('cnpj', '=', $request->comprador['cnpj'])->first();
+            $pedido['comprador_id'] = $comprador['id'];
+        }
+
         if($pedido::notExists($pedido)){
             $pedido->save();
 
             foreach ($request->itens as $item)
-            {   
+            {  
 
                 $prazoEntrega = new PrazoEntrega;
                 info($pedido['pedido_vendedor'] . " - " . $item['prazoRecebimento']);
@@ -67,9 +82,8 @@ class PedidoController extends Controller
                     $prazoEntrega['data'] = date("Y-m-d", strtotime($item['prazoRecebimento']));
                 }
                 else
-                {   
-
-                    $prazoEntrega['data'] = date("Y-m-d", strtotime($request->dataEmissao));                    
+                {
+                    $prazoEntrega['data'] = date("Y-m-d", strtotime($request->dataEmissao));
                     $prazoEntrega['data'] = date('Y-m-d', strtotime($prazoEntrega['data'] . ' + ' . $request->prazoEntrega . ' days'));
                 }
 
@@ -93,12 +107,56 @@ class PedidoController extends Controller
                 $itemF->save();
             }
 
-            return response('Success', 201)
+            return response('Pedido Criado', 201)
                   ->header('Content-Type', 'text/plain');
 
         } else {
+            $pedido['id'] = Pedido::getExistingPedido($pedido)['id'];
 
-            return response('Success', 200)->header('Content-Type', 'text/plain');
+            if ($pedido['status_id'] == 3) {
+                return response('Pedido finalizado', 200)->header('Content-Type', 'text/plain');
+            }
+
+            $pedido->update();
+
+            foreach ($request->itens as $item)
+            {  
+                $itemF = new Item();
+
+                if (!Item::notExists($item, $pedido['id'])) {
+                    $itemF['id'] = Item::getExistingItem($item, $pedido['id'])['id'];
+                }
+
+                $prazoEntrega = new PrazoEntrega;
+                
+                if($item['prazoRecebimento'] != "1753-01-01")
+                {
+                    $prazoEntrega['data'] = date("Y-m-d", strtotime($item['prazoRecebimento']));
+                }
+                else
+                {
+                    $prazoEntrega['data'] = date("Y-m-d", strtotime($request->dataEmissao));
+                    $prazoEntrega['data'] = date('Y-m-d', strtotime($prazoEntrega['data'] . ' + ' . $request->prazoEntrega . ' days'));
+                }
+
+
+                if($item['codigoComprador'] != ""){
+                    $itemF['codigo_comprador'] = $item['codigoComprador']; 
+                }
+
+                $itemF['codigo_vendedor'] = $item['codigoVendedor'];
+                $itemF['numero_item'] = $item['numeroItem'];
+                $itemF['descricao'] = $item['descricao'];
+                $itemF['quantidade'] = $item['quantidade'];
+                $itemF['pedido_id'] = $pedido['id'];
+
+                $prazoEntrega['item_id'] = $itemF['id'];
+                $prazoEntrega->save();
+                $itemF['prazo_entrega_id'] = $prazoEntrega['id'];
+                $itemF->update();
+            }
+
+            return response('Pedido atalizado', 201)->header('Content-Type', 'text/plain');
         }
 
     }
