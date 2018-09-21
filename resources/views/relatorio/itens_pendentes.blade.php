@@ -16,7 +16,7 @@
 		            <tr>
 		                <th>Pedido do comprador</th>
 		                <th>Data de emissão</th>
-		                <th>CNPJ Unidade</th>
+		                <th style="min-width: 170px; ">CNPJ Unidade</th>
 		                <th>Vendedor</th>
 		                <th>descrição</th>
 		                <th>quantidade</th>
