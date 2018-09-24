@@ -11,7 +11,7 @@
         </div>
         <div class="panel-body  mt-4">
 
-	  		<table id="list-table" class="table display table-striped table-bordered" style="width:100%">
+	  		<table id="list-table-itens-pendentes" class="table display table-striped table-bordered" style="width:100%">
 		        <thead>
 		            <tr>
 		                <th>Pedido do comprador</th>

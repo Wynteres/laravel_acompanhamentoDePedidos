@@ -68,6 +68,9 @@ a:hover{
 input.form-control.form-control-sm {
     margin-top: -6px;
 }
+.dt-buttons *:hover{
+    cursor: pointer;
+}
 .dt-buttons{
 	margin-left: 15px;
     display: inline;
@@ -99,6 +102,21 @@ input.form-control.form-control-sm {
 	margin-left: 10px;
 }
 #list-table_length label{
+	display: inline-flex;
+}
+#list-table-itens-pendentes_filter{
+	float: right;
+}
+#list-table-itens-pendentes_filter label{
+    display: inline-flex;
+}
+#list-table-itens-pendentes_filter input{
+	margin-left: 10px;
+}
+#list-table-itens-pendentes_length select{
+	margin-left: 10px;
+}
+#list-table-itens-pendentes_length label{
 	display: inline-flex;
 }
 #list-table-itens_filter{
@@ -163,12 +181,14 @@ input.form-control.form-control-sm {
 }
 .link-det:hover{
 	color: #4CAF50;
+	cursor: pointer;
 }
 .link-archive{
 	color: #e53935;
 }
 .link-archive:hover{
 	color: #b71c1c;
+	cursor: pointer;
 }
 .link-delivery{
 	color: #2c82c9 !important;

@@ -61,9 +61,7 @@ class NFController extends Controller
                 $nf->save();
 
                 foreach ($nfEntrega['itens'] as $item){
-                    info($pedido['id']);
                     $itemPedido = Item::where('pedido_id', '=', $pedido['id'])->where('numero_item', '=', $item['item'])->first();
-                    info($itemPedido['id']);
 
                     $itemEntrega = new ItemEntrega;
 

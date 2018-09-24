@@ -6,9 +6,9 @@ $(document).ready(function() {
             'excel', 'pdf', 'print'
         ],
 	     columnDefs: [
-	     	{ type: 'date-eu', targets: 3 },
-	     	{ type: 'range_date', targets: 3 },
-       		{ type: 'date-eu', targets: 4 }
+	     	{ type: 'date-eu', targets: 4 },
+	     	{ type: 'range_date', targets: 4 },
+       		{ type: 'date-eu', targets: 5 }
 	     ]
     });
 
@@ -30,6 +30,17 @@ $(document).ready(function() {
 	     columnDefs: [
 	     	{ type: 'date-eu', targets: 5 }
 	     ]
+    });
+
+    $('#list-table-itens-pendentes').DataTable({
+        dom: 'lBfrtip',
+        buttons: [
+            'excel', 'pdf', 'print'
+        ],
+         columnDefs: [
+            { type: 'date-eu', targets: 1 },
+            { type: 'date-eu', targets: 6 }
+         ]
     });
     tableButtonsToIcon();
     
