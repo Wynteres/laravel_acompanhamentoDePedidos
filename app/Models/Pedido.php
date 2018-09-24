@@ -38,8 +38,9 @@ class Pedido extends Model
 		{	
 			$quantidadeEntregue = 0;
 			foreach($this->itensEntregas()->where('item_id', '=', $item['id']) as $itemEntregue)
-			{
+			{	
 				$quantidadeEntregue += $itemEntregue['quantidade'];
+				info($item['pedido_id']  . " - " . $item['quantidade'] . " - " . $itemEntregue['quantidade'] . " | ". $quantidadeEntregue);
 			}
 
 			if($quantidadeEntregue < $item['quantidade'])

@@ -24,7 +24,7 @@ class PedidoController extends Controller
     public function index()
     {
 
-        $pedidos = Pedido::where('status_id', '!=', '3')->get();
+        $pedidos = Pedido::all();
 
         return view('pedido/pedido_management')->with('pedidos', $pedidos);
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 
 use App\Models\NF;
+use App\Models\Empresa;
 use App\Models\Entrega;
 use App\Models\ItemEntrega;
 use App\Models\Pedido;
@@ -33,9 +34,10 @@ class NFController extends Controller
      */
     public function create(Request $request)
     {
-
-        $pedido = Pedido::where('pedido_vendedor', '=', $request['pedidoNum'])->whereYear('data_emissao', '=', date($request['pedAno']))->withTrashed()->first();
+        $empresaID = Empresa::where('cnpj' , '=', $request['cnpjVendedor'])->first()['id'];
+        $pedido = Pedido::where('pedido_vendedor', '=', $request['pedidoNum'])->where('empresa_id', '=', $empresaID)->whereYear('data_emissao', '=', date($request['pedAno']))->withTrashed()->first();
         $entrega = new Entrega;
+
 
         $entrega['cnpj_comprador'] = $request['cnpjComprador'];
         $entrega['cnpj_vendedor'] = $request['cnpjVendedor'];
@@ -59,9 +61,9 @@ class NFController extends Controller
                 $nf->save();
 
                 foreach ($nfEntrega['itens'] as $item){
-
+                    info($pedido['id']);
                     $itemPedido = Item::where('pedido_id', '=', $pedido['id'])->where('numero_item', '=', $item['item'])->first();
-
+                    info($itemPedido['id']);
 
                     $itemEntrega = new ItemEntrega;
 
@@ -85,10 +87,11 @@ class NFController extends Controller
 
             } else {
                 $entrega->delete();
+                return response('Nota Fiscal já existente', 200)->header('Content-Type', 'text/plain');
             }
         }
 
-        return response('Success', 200)->header('Content-Type', 'text/plain');
+        return response('Entrega Criada', 201)->header('Content-Type', 'text/plain');
 
     }
 
