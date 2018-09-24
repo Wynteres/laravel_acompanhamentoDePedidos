@@ -28,7 +28,7 @@ class PedidoController extends Controller
 
         return view('pedido/pedido_management')->with('pedidos', $pedidos);
     }
-
+ 
     public function archive()
     {
 

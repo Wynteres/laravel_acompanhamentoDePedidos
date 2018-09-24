@@ -70,7 +70,7 @@ class NFController extends Controller
                     $itemEntrega['quantidade'] = $item['quantidadeEntregue'];
                     $itemEntrega['item_id'] = $itemPedido['id'];
                     $itemEntrega['entrega_id'] = $entrega['id'];
-                    $itemEntrega->save();
+                    $itemEntrega->save(); 
 
                 }
 
@@ -105,7 +105,7 @@ class NFController extends Controller
     {
         //
     }
-
+ 
     /**
      * Display the specified resource.
      *

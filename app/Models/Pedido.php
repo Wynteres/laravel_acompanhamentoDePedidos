@@ -24,7 +24,7 @@ class Pedido extends Model
 		}
 	}
 
-
+ 
 	public static function getExistingPedido($pedido){
 
 		return Pedido::where('pedido_vendedor', '=', $pedido['pedido_vendedor'])->where('comprador_id', '=', $pedido['comprador_id'])->whereYear('data_emissao', '=', $pedido['data_emissao'])->withTrashed()->first();
