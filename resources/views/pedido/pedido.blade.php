@@ -80,7 +80,7 @@
 								<div class="col-12">							
 							  		<table id="list-table-itens" class="table table-striped table-bordered" style="width:100%">
 								        <thead>
-								            <tr>
+								            <tr class="text-center">
 								                <th>Código comprador</th>
 								                <th>Código vendedor</th>
 								                <th>Número do item</th>
@@ -112,7 +112,7 @@
 								        </tbody>
 
 								        <tfoot>
-								            <tr>
+								            <tr class="text-center">
 								                <th>Código comprador</th>
 								                <th>Código vendedor</th>
 								                <th>Número do item</th>

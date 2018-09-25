@@ -12,7 +12,7 @@
 	        <div class="panel-body  mt-4">
 	  		<table id="list-table" class="table display table-striped table-bordered" style="width:100%">
 		        <thead>
-		            <tr>
+		            <tr class="text-center">
 		                <th>Status</th>
 		                <th>CNPJ da unidade</th>
 		                <th>Pedido do comprador</th>
@@ -60,7 +60,7 @@
 		        </tbody>
 
 		        <tfoot>
-		            <tr>
+		            <tr class="text-center">
 		                <th>Status</th>
 		                <th>CNPJ da unidade</th>
 		                <th>Pedido do comprador</th>

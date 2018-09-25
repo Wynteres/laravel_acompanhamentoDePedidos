@@ -13,11 +13,12 @@
 
 	  		<table id="list-table-itens-pendentes" class="table display table-striped table-bordered" style="width:100%">
 		        <thead>
-		            <tr>
+		            <tr class="text-center">
 		                <th>Pedido do comprador</th>
 		                <th>Data de emissão</th>
 		                <th style="min-width: 170px; ">CNPJ Unidade</th>
 		                <th>Vendedor</th>
+		                <th>Código Comprador</th>
 		                <th>descrição</th>
 		                <th>quantidade</th>
 		                <th>Prazo de entrega</th>
@@ -37,6 +38,7 @@
 			                	</td>
 			                	<td>{{$pedido->comprador['cnpj']}}</td>
 			                	<td>{{$pedido->empresa['nome']}}</td>
+			                	<td>{{$item['codigo_comprador']}}</td>
 			                	<td>{{$item['descricao']}}</td>
 				                <td>{{$item['quantidade']}}</td>
 
@@ -54,11 +56,12 @@
 		        </tbody>
 
 		        <tfoot>
-		            <tr>
+		            <tr class="text-center">
 		                <th>Pedido do comprador</th>
 		                <th>Data de emissão</th>
 		                <th>CNPJ Unidade</th>
 		                <th>Vendedor</th>
+		                <th>Código Comprador</th>
 		                <th>descrição</th>
 		                <th>quantidade</th>
 		                <th>Prazo de entrega</th>
