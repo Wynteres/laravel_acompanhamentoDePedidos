@@ -26,4 +26,14 @@ class relatorioController extends Controller
         return view('relatorio/itens_pendentes')->with('pedidos', $pedidos);
     }
 
+
+    public function itensEntregues(Request $request)
+    {
+        
+
+        $pedidos = Pedido::where('status_id', '=', '3')->get();
+
+        return view('relatorio/itens_pendentes')->with('pedidos', $pedidos);
+    }
+
 }

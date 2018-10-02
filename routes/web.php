@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 	//rotas de relatórios
 	Route::get('/relatorio/itens-a-entregar', 'RelatorioController@itensPendentes')->name('relatorio-itens-entregar');
+	Route::get('/relatorio/itens-entregues', 'RelatorioController@itensEntregues')->name('relatorio-itens-entregues');
 
 
 });

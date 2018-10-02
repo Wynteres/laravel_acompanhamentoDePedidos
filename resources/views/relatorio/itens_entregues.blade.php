@@ -21,7 +21,7 @@
 		                <th>Código do produto</th>
 		                <th>Produto</th>
 		                <th>Qtd</th>
-		                <th>Prazo de entrega</th>
+		                <th>Data de envio</th>
 		                <th></th>
 		            </tr>
 		        </thead>
@@ -64,7 +64,7 @@
 		                <th>Código do produto</th>
 		                <th>Produto</th>
 		                <th>Qtd</th>
-		                <th>Prazo de entrega</th>
+		                <th>Data de envio</th>
 		                <th></th>
 		            </tr>
 		        </tfoot>

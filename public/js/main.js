@@ -7,7 +7,6 @@ $(document).ready(function() {
         ],
 	     columnDefs: [
 	     	{ type: 'date-eu', targets: 4 },
-	     	{ type: 'range_date', targets: 4 },
        		{ type: 'date-eu', targets: 5 }
 	     ]
     });
@@ -18,7 +17,7 @@ $(document).ready(function() {
             'excel', 'pdf', 'print'
         ],
 	     columnDefs: [
-	     	{ type: 'date-eu', targets: 5 }
+	     	{ type: 'date-eu', targets: 4 }
 	     ]
     });
 
@@ -28,7 +27,7 @@ $(document).ready(function() {
             'excel', 'pdf', 'print'
         ],
 	     columnDefs: [
-	     	{ type: 'date-eu', targets: 5 }
+	     	{ type: 'date-eu', targets: 4 }
 	     ]
     });
 
@@ -39,9 +38,10 @@ $(document).ready(function() {
         ],
          columnDefs: [
             { type: 'date-eu', targets: 1 },
-            { type: 'date-eu', targets: 6 }
+            { type: 'date-eu', targets: 7 }
          ]
     });
+    
     tableButtonsToIcon();
     
 } );

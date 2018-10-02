@@ -58,12 +58,15 @@ class PedidoController extends Controller
             $comprador = new Empresa;
             $comprador['nome'] = $request->comprador['nome'];
             $comprador['cnpj'] = $request->comprador['cnpj'];
+            $comprador['codigo_unidade'] = $request->comprador['unidade'];
             $comprador->save();
             $pedido['comprador_id'] = $comprador['id'];
         } 
         else
         {
             $comprador = Empresa::where('cnpj', '=', $request->comprador['cnpj'])->first();
+            $comprador['codigo_unidade'] = $request->comprador['unidade'];
+            $comprador->update();
             $pedido['comprador_id'] = $comprador['id'];
         }
 

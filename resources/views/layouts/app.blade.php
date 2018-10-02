@@ -126,6 +126,9 @@
                     <a href="{{ route('relatorio-itens-entregar') }}" role="button" aria-expanded="false">
                         - Itens a entregar
                     </a>
+                    <a href="{{ route('relatorio-itens-entregues') }}" role="button" aria-expanded="false">
+                        - Itens entregues
+                    </a>
                 </div>
 
                 <hr class="hr-menu">

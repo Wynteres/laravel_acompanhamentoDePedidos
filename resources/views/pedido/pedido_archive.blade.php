@@ -10,13 +10,14 @@
         		<hr class="hr-section">
 	        </div>
 	        <div class="panel-body  mt-4">
+	  		
 	  		<table id="list-table" class="table display table-striped table-bordered" style="width:100%">
 		        <thead>
 		            <tr class="text-center">
 		                <th>Status</th>
 		                <th>CNPJ da unidade</th>
-		                <th>Pedido do comprador</th>
-		                <th>Pedido do vendedor</th>
+		                <th>Cod. da unidade</th>
+		                <th>Número do pedido</th>
 		                <th>Data de emissão</th>
 		                <th>Prazo de entrega</th>
 		                <th>Vendedor</th>
@@ -28,10 +29,10 @@
 		        	@foreach($pedidos as $pedido)
 
 			            <tr>
-			                <td>{{ $pedido->status['descricao'] }}</td>			                
+			                <td>{{ $pedido->status['descricao'] }}</td>
 			                <td>{{ $pedido->comprador['cnpj'] }}</td>
+			                <td>{{ $pedido->comprador['codigo_unidade'] }}</td>
 			                <td>{{ $pedido['pedido_comprador'] }}</td>
-			                <td>{{ $pedido['pedido_vendedor'] }}</td>
 			                <td>
 			                	<?php 
 			                		$date = strtotime($pedido['data_emissao']);
@@ -63,14 +64,14 @@
 		            <tr class="text-center">
 		                <th>Status</th>
 		                <th>CNPJ da unidade</th>
-		                <th>Pedido do comprador</th>
-		                <th>Pedido do vendedor</th>
+		                <th>Cod. da unidade</th>
+		                <th>Número do pedido</th>
 		                <th>Data de emissão</th>
 		                <th>Prazo de entrega</th>
 		                <th>Vendedor</th>
 		                <th></th>
 		            </tr>
-		        </tfoot>
+	            </tfoot>
 		        
 		    </table>
 

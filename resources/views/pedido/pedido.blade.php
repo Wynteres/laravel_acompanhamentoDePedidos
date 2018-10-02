@@ -5,7 +5,7 @@
 
 	<div class="" style="margin-left: 20px" >
 
-		<div class="panel panel-default">
+		<div class="panel panel-default mr-4">
 	        <div class="panel-heading">
 				<div class="row">
 					<div class="col-4 align-left">
@@ -22,7 +22,11 @@
 					<!-- informacoes gerais do pedido -->
 					<div class="page-header">
 						<div class="row">
-							<div class="col-4">
+							<div class="col-8">
+								<span>Unidade: <strong>{{ @$pedido->comprador['nome'] }}</strong></span>
+							</div>
+
+							<div class="col-4 text-right">
 								<span>
 									Emissão do pedido: 
 									<strong>
@@ -33,13 +37,23 @@
 									</strong>
 								</span>
 							</div>
+						</div>
+
+						<div class="row mt-2">
+
+							<div class="col-4">
+								<span>Código unidade: <strong> {{ @$pedido->comprador['codigo_unidade'] }}</strong></span>
+							</div>
+
 							<div class="col-4 offset-4 text-right">
 								<span>
 									Pedido {{@$pedido->empresa['nome'] }}: <strong>{{@$pedido['pedido_vendedor'] }}</strong>
 								</span>
 							</div>
 						</div>
+
 						<div class="row mt-2">
+
 							<div class="col-4">
 								<span>
 									Status: <strong>{{@$pedido->status['descricao'] }}</strong>
@@ -54,6 +68,7 @@
 								@endif
 
 							</div>
+
 						</div>
 					</div>
 					<hr class="hr-section">					
@@ -69,7 +84,7 @@
 							</ul>
 						</div>
 
-						<div class="tab-content col-12" id="pills-tabContent">
+						<div class="tab-content col-12 mt-3" id="pills-tabContent">
 
 							<!-- tabela para mostrar todos itens do pedido -->
 
@@ -81,10 +96,9 @@
 							  		<table id="list-table-itens" class="table table-striped table-bordered" style="width:100%">
 								        <thead>
 								            <tr class="text-center">
-								                <th>Código comprador</th>
-								                <th>Código vendedor</th>
+								                <th>Código do produto</th>
 								                <th>Número do item</th>
-								                <th>Descrição</th>
+								                <th>Produto</th>
 								                <th>Quantidade</th>
 								                <th>Prazo de entrega</th>
 								            </tr>
@@ -95,7 +109,6 @@
 
 								            <tr>
 								                <td>{{ @$item['codigo_comprador'] }}</td>
-								                <td>{{ @$item['codigo_vendedor'] }}</td>
 								                <td>{{ @$item['numero_item'] }}</td>
 								                <td>{{ @$item['descricao'] }}</td>
 								                <td>{{ @$item['quantidade'] }}</td>
@@ -113,10 +126,9 @@
 
 								        <tfoot>
 								            <tr class="text-center">
-								                <th>Código comprador</th>
-								                <th>Código vendedor</th>
+								                <th>Código do produto</th>
 								                <th>Número do item</th>
-								                <th>Descrição</th>
+								                <th>Produto</th>
 								                <th>Quantidade</th>
 								                <th>Prazo de entrega</th>
 								            </tr>
@@ -136,11 +148,10 @@
 								<div class="col-12">							
 							  		<table id="list-table-entrega" class="table table-striped table-bordered" style="width:100%">
 								        <thead>
-								            <tr>
-								                <th>Código comprador</th>
-								                <th>Código vendedor</th>
+								            <tr class="text-center">
+								                <th>Código do produto</th>
 								                <th>Número do item</th>
-								                <th>Descrição</th>
+								                <th>Produto</th>
 								                <th>Quantidade <br> enviada</th>
 								                <th>Data de envio</th>
 								                <th>Lote de envio</th>
@@ -156,7 +167,6 @@
 								        			
 										            <tr>
 										                <td>{{ @$itemEntrega->item['codigo_comprador'] }}</td>
-										                <td>{{ @$itemEntrega->item['codigo_vendedor'] }}</td>
 										                <td>{{ @$itemEntrega->item['numero_item'] }}</td>
 										                <td>{{ @$itemEntrega->item['descricao'] }}</td>
 										                <td>{{ @$itemEntrega['quantidade'] }}</td>
@@ -179,11 +189,10 @@
 								        </tbody>
 
 								        <tfoot>
-								            <tr>
-								                <th>Código comprador</th>
-								                <th>Código vendedor</th>
+								            <tr class="text-center">
+								                <th>Código do produto</th>
 								                <th>Número do item</th>
-								                <th>Descrição</th>
+								                <th>Produto</th>
 								                <th>Quantidade <br> enviada</th>
 								                <th>Data de envio</th>
 								                <th>Lote de envio</th>
