@@ -47,7 +47,7 @@ class PedidoController extends Controller
 
         $pedido = new Pedido();
         $pedido['empresa_id'] = $request->empresa;
-        $pedido['status_id'] = 1;
+        $pedido['status_id'] = 1; 
         $pedido['pedido_comprador'] = $request->numeroComprador;
         $pedido['pedido_vendedor'] = $request->numeroMogiglass;
         $dataEmissao = $request->dataEmissao;

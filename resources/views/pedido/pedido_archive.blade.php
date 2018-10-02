@@ -27,7 +27,8 @@
 		        <tbody>
 
 		        	@foreach($pedidos as $pedido)
-
+ 
+ 
 			            <tr>
 			                <td>{{ $pedido->status['descricao'] }}</td>
 			                <td>{{ $pedido->comprador['cnpj'] }}</td>
