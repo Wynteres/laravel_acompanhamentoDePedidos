@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Models\Transportadora;
 
-class transportadoras extends Seeder
+class TransportadorasTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
