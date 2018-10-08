@@ -18,5 +18,5 @@ A aplicação PAI é em seu todo, simples, sendo necessário pouca preparação 
 - Configure o banco de dados no arquivo **config/database.php**.
 - Inicie o servidor Artisan.
 - faça o comando **"php artisan migrate".**
-- Faça o comando **"php artisan db:seed"
+- Faça o comando **"php artisan db:seed"**
 - Pronto, o sistema está operando. 

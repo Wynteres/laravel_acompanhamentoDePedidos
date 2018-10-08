@@ -17,7 +17,7 @@ class CreateTransportadorasTable extends Migration
 
             $table->increments('id');
             $table->string('cnpj')->nullable();
-            $table->string('url')->unsigned();
+            $table->string('url')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
