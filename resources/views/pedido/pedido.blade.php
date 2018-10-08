@@ -179,7 +179,11 @@
 										                <td> {{@$loteEntrega}} </td>
 										                <td class="custom-buttons text-center">
 										                	<a href="{{ route('notas-fiscais', ['pedido' => $pedido->id, 'entrega' => $entrega->id]) }}" class="link-det mr-1" role="button"><i class="fas fa-file-invoice-dollar"></i></a>
-	                										<a disabled class="link-delivery" role="button"><i class="fas fa-truck"></i></a>
+										                	@if (@$itemEntrega->entrega->linkRastreio(@$itemEntrega->entrega)['url'] != "")
+	                											<a class="link-delivery" target="_BLANK" role="button" href="{{ @$itemEntrega->entrega->linkRastreio(@$itemEntrega->entrega)['url'] }}"><i class="fas fa-truck"></i></a>
+                											@else
+                												<a class="link-delivery" target="_BLANK" role="button" disabled><i class="fas fa-truck"></i></a>
+            												@endif
 										                	
 										                </td>
 										            </tr>

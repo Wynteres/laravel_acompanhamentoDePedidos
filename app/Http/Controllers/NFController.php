@@ -9,8 +9,9 @@ use App\Models\Entrega;
 use App\Models\ItemEntrega;
 use App\Models\Pedido;
 use App\Models\Item;
+use App\Models\Transportadora;
 use Illuminate\Http\Request;
-
+ 
 use Storage;
 use Log;
 use Auth;
@@ -36,12 +37,14 @@ class NFController extends Controller
     {
         $empresaID = Empresa::where('cnpj' , '=', $request['cnpjVendedor'])->first()['id'];
         $pedido = Pedido::where('pedido_vendedor', '=', $request['pedidoNum'])->where('empresa_id', '=', $empresaID)->whereYear('data_emissao', '=', date($request['pedAno']))->withTrashed()->first();
+        $transportadoraID = Transportadora::where('cnpj' , '=', $request['cnpjTransportadora'])->first()['id'];        
         $entrega = new Entrega;
 
 
         $entrega['cnpj_comprador'] = $request['cnpjComprador'];
         $entrega['cnpj_vendedor'] = $request['cnpjVendedor'];
         $entrega['pedido_id'] = $pedido['id'];
+        $entrega['transportadora_id'] = $transportadoraID;
         
         $entrega->save();
 

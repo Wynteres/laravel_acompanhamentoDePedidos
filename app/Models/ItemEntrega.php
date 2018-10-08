@@ -21,6 +21,6 @@ class ItemEntrega extends Model
 
 	public function entrega()
 	{
-		return $this->hasOne('App\Models\Entrega', 'entrega_id', 'id');
+		return $this->hasOne('App\Models\Entrega', 'id', 'entrega_id');
 	}
 }
