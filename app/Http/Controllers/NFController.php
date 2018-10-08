@@ -51,7 +51,6 @@ class NFController extends Controller
         foreach ($request['nfs'] as $nfEntrega){
 
             $nf = new NF;
-            $nf['caminho_xml'] = "public/" . date("Y/m/d", strtotime($nfEntrega['emissao'])) . "/" . $nfEntrega['chave'] . ".xml";
 
 
             $nf['numero'] = $nfEntrega['numero'];
@@ -61,6 +60,8 @@ class NFController extends Controller
             Storage::put($nf['caminho_xml'], $nfEntrega['file']);
             
             if($nf::notExists($nf)){
+
+                $nf['caminho_xml'] = "public/" . date("Y/m/d", strtotime($nfEntrega['emissao'])) . "/" . $nfEntrega['chave'] . ".xml";
                 $nf->save();
 
                 foreach ($nfEntrega['itens'] as $item){
