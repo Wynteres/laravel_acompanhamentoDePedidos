@@ -57,11 +57,12 @@ class NFController extends Controller
             $nf['chave'] = $nfEntrega['chave'];
             $nf['data_emissao'] = date("Y/m/d", strtotime($nfEntrega['emissao']));
             $nf['entrega_id'] = $entrega['id'];
-            Storage::put($nf['caminho_xml'], $nfEntrega['file']);
             
             if($nf::notExists($nf)){
 
                 $nf['caminho_xml'] = "public/" . date("Y/m/d", strtotime($nfEntrega['emissao'])) . "/" . $nfEntrega['chave'] . ".xml";
+                Storage::put($nf['caminho_xml'], $nfEntrega['file']);
+                
                 $nf->save();
 
                 foreach ($nfEntrega['itens'] as $item){
