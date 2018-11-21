@@ -37,6 +37,9 @@ class PedidoController extends Controller
         return view('pedido/pedido_archive')->with('pedidos', $pedidos);
     }
 
+
+
+
     /**
      * Show the form for creating a new resource.
      *

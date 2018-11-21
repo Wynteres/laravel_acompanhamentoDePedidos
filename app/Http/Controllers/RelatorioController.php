@@ -33,7 +33,7 @@ class relatorioController extends Controller
 
         $pedidos = Pedido::where('status_id', '=', '3')->get();
 
-        return view('relatorio/itens_pendentes')->with('pedidos', $pedidos);
+        return view('relatorio/itens_entregues')->with('pedidos', $pedidos);
     }
 
 }

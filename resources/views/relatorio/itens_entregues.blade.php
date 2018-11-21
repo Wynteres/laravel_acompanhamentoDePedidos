@@ -5,11 +5,11 @@
 	<div class="panel panel-default">
         <div class="panel-heading">
 			<div class="row mb-4">
-            	<div class="col-4 offset-4 text-center title">Itens pendentes</div>
+            	<div class="col-4 offset-4 text-center title">Itens entregues</div>
         	</div>
     		<hr class="hr-section">
-        </div>
-        <div class="panel-body  mt-4">
+        </div
+>        <div class="panel-body  mt-4">
 
 	  		<table id="list-table-itens-pendentes" class="table display table-striped table-bordered" style="width:100%">
 		        <thead>
