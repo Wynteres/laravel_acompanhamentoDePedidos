@@ -48,10 +48,15 @@ $(document).ready(function() {
 
 function tableButtonsToIcon(){
 	$(".buttons-print").empty()
+    $(".buttons-print").attr("title", "Imprimir")
 	$(".buttons-print").append('<i class="fas fa-print"></i>')
+
 	$(".buttons-pdf").empty()
+    $(".buttons-pdf").attr("title", "Baixar em PDF")
 	$(".buttons-pdf").append('<i class="fas fa-file-pdf"></i>')
+    
 	$(".buttons-excel").empty()
+    $(".buttons-excel").attr("title", "Baixar em Excel")
 	$(".buttons-excel").append('<i class="fas fa-file-excel"></i>')
 
 }

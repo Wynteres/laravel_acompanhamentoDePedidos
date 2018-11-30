@@ -127,10 +127,11 @@ class PedidoController extends Controller
 
             foreach ($request->itens as $item)
             {  
-                $itemF = new Item();
 
                 if (!Item::notExists($item, $pedido['id'])) {
                     $itemF['id'] = Item::getExistingItem($item, $pedido['id'])['id'];
+                } else {
+                    $itemF = new Item();
                 }
 
                 $prazoEntrega = new PrazoEntrega;

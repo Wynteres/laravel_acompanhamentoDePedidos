@@ -46,12 +46,12 @@
 			                	 
 			                <td>{{ $pedido->empresa['nome'] }}</td>
 			                <td class="custom-buttons text-center">
-			                	<a href="{{ route('pedido', ['id' => $pedido->id]) }}" class="link-det mr-1" role="button"><i class="fas fa-list"></i></a>
+			                	<a href="{{ route('pedido', ['id' => $pedido->id]) }}" class="link-det mr-1" role="button" title="Ver pedido"><i class="fas fa-list"></i></a>
 
 			                	<form action="{{ route('pedido-restore', ['pedido' => $pedido->id]) }}" method="post">
 								    {!! method_field('patch') !!}
     								{!! csrf_field() !!}
-								    <button  class="link-det" type="submit"><i class="fas fa-box-open"></i></button>
+								    <button  class="link-det" type="submit" title="Desarquivar pedido"><i class="fas fa-box-open"></i></button>
 								</form>
 
 			                </td>

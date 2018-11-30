@@ -63,7 +63,7 @@
 
 								@if(@$pedido->entregas->count() > 0)
 								<span>
-									Ver notas fiscais:<a href="{{ route('notas-fiscais-pedido', ['pedido' => $pedido->id]) }}" class="link-det ml-1 mr-1" role="button"><i class="fas fa-file-invoice-dollar"></i></a>
+									<a href="{{ route('notas-fiscais-pedido', ['pedido' => $pedido->id]) }}" class="link-det ml-1 mr-1" role="button" title="Ver notas fiscais"><i class="fas fa-file-invoice-dollar"></i> Ver notas fiscais</a>
 								</span>
 								@endif
 
@@ -178,9 +178,9 @@
 									                	</td>
 										                <td> {{@$loteEntrega}} </td>
 										                <td class="custom-buttons text-center">
-										                	<a href="{{ route('notas-fiscais', ['pedido' => $pedido->id, 'entrega' => $entrega->id]) }}" class="link-det mr-1" role="button"><i class="fas fa-file-invoice-dollar"></i></a>
+										                	<a href="{{ route('notas-fiscais', ['pedido' => $pedido->id, 'entrega' => $entrega->id]) }}" class="link-det mr-1" role="button" title="Ver nota fiscal"><i class="fas fa-file-invoice-dollar"></i></a>
 										                	@if (@$itemEntrega->entrega->linkRastreio(@$itemEntrega->entrega)['url'] != "")
-	                											<a class="link-delivery" target="_BLANK" role="button" href="{{ @$itemEntrega->entrega->linkRastreio(@$itemEntrega->entrega)['url'] }}"><i class="fas fa-truck"></i></a>
+	                											<a class="link-delivery" target="_BLANK" role="button" title="Ver rastreio" href="{{ @$itemEntrega->entrega->linkRastreio(@$itemEntrega->entrega)['url'] }}"><i class="fas fa-truck"></i></a>
                 											@else
                 												<a class="link-delivery" target="_BLANK" role="button" disabled><i class="fas fa-truck"></i></a>
             												@endif

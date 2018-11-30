@@ -47,7 +47,7 @@
 			                		echo date("d/m/Y", $date);
 			                	 ?></td>
 			                	 <td>
-			                	 	<a href="{{ route('pedido', ['id' => $pedido->id]) }}" class="link-det mr-1" role="button"><i class="fas fa-list"></i></a>
+			                	 	<a href="{{ route('pedido', ['id' => $pedido->id]) }}" class="link-det mr-1" title="Ver pedido" role="button"><i class="fas fa-list"></i></a>
 			                	 </td>
 				            </tr>
 			            @endforeach
