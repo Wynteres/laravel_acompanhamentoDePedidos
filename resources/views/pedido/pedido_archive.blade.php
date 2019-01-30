@@ -25,6 +25,7 @@
 		            </tr>
 		        </thead>
 		        <tbody>
+		        	
 
 		        	@foreach($pedidos as $pedido)
  
